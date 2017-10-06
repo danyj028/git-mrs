@@ -1,0 +1,133 @@
+<?php
+
+
+print <<< endprint
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+		<title>EliveTrain Coach</title>
+		<meta name="author" content="root">
+		<meta name="generator" content="Bluefish 1.0.7">
+		<meta name="description" content="EliveTrain Coach" >
+		<meta name="keywords" content="elivetrain " >
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
+		<meta http-equiv="Content-Script-Type" content="text/javascript" >
+		<meta http-equiv="Content-Style-Type" content="text/css" >
+		<link rel=stylesheet href="elt_css/elt_01.css" type="text/css">
+	</head>
+<script language="javascript">
+    function confirm_logout()
+   {
+   if (confirm("Please click [OK] to logout from ELiveTrain, or [Cancel] to continue."))
+     {
+        location.href = "/elt01/elt_logout.php";
+     }
+   }
+
+	function check_announcement(w_userid,w_username)
+	{
+		window.open("/elt01/el_tools/el_s_an_display.php?x_userid=w_userid","Announcement","width=640, height=440");
+		w_url = "/elt01/el_tools/el_p_an_display.php?x_userid="+w_userid+"&x_username=" + w_username;
+		window.open(w_url,"Personal Announcement","width=640, height=440");
+	}
+
+</script>
+	<body>
+
+
+
+endprint;
+
+include "./inc/el_header.php";
+$h = new el_header;
+
+$h->h_logo = "t";
+$h->h_return="f";
+$h->h_home="t";
+$h->h_username=$w_username;
+$h->h_title = "<font size=\"+1\">ELiveTrain : Training Diary</font>";
+//$h->h_title = "<img src=\"./elt_img/elt_td_01.png\" width=\"400\"  alt=\"EliveTrain Training Diary\" align=\"left\">";
+$h->h_date_time = "t";
+$h->h_display();		
+
+$w_today = getdate();
+$w_month = $w_today["mon"];
+$w_year = $w_today["year"];
+
+print <<< endprint
+
+<!--div id="dv1" style="position:absolute;top:70px;left:120px;width:800px;height:520px;
+	background-color:#BDE1B0;opacity:0.90;font:#005500;
+	padding-right:5px;padding-left:5px;padding-top: 5px;padding-bottom:5px;
+	border:solid;visibility:hidden;">
+
+<div style="text-align:right;">
+<input type="button" style="height:30px; width:30px;background-color:#ffffff;font-size:16px;text-align:center; solid;font-weight:bold;color:#880000;" name="Cancel" value="X" onclick="cancel_dv()">
+</div>
+
+</div-->
+
+<table style="width:100%; padding:10px;">
+<colgroup>
+<col style="width:15%;">
+<col style="width:auto;">
+<!--col style="width: auto;"-->
+</colgroup>
+
+
+<tr>
+<td valign="top">
+<div id="cl" style="">
+<div style="width:90%;line-height:25px;text-align:left;background-color:#c0eb52;color:#000000;
+padding-left: 10px;
+padding-bottom: 5px;
+padding-top: 10px;
+	border-width: 2px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+">
+<!--a href="./elt_today_diary.php" style="font-size:12px;">:: Today ::</a>
+<br>
+<a href="./elt_month_diary.php" target="FM" style="font-size:12px;">:: Month View ::</a>
+<br>
+<a href="./elt_week_diary.php" style="font-size:12px;">:: Week View ::</a>
+<br>
+<a href="./elt_day_diary.php" style="font-size:12px;">:: Day View ::</a-->
+<a href="./elt_month_diary.php?x_month=$w_month&x_year=$w_year" target="FM" style="font-size:12px;">:: Diary ::</a>
+<br>
+<a href="./elt_events.php" style="font-size:12px;">:: Events ::</a>
+<br>
+<a href="javascript:check_announcement('$w_userid','$w_username')" style="font-size:12px" >:: Announcements ::</a>
+<br>
+<hr style="width:95%; align: center; color:#000000; background-color: #000000; height: 3px; ">
+<a href="./elt_mystuff.php" style="font-size:12px;">:: My Stuff ::</a>
+<br>
+<a href="./elt_myreports.php" style="font-size:12px;">:: Reports ::</a>
+<br>
+<a href="javascript:confirm_logout()" style="font-size:12px;color:#666666;">:: Logout ::</a>
+</div>
+</div>
+</td>
+
+<td valign="top">
+<div id="cm" style="text-align:center;margin-top:-10px;";>
+<iframe name="FM" width="100%" height="800px" frameborder="0" scrolling="auto" style="left-border:2px;"></iframe>
+
+</div>
+</td>
+<!--td>
+<div id="cr" style="text-align:right";>
+
+</div>
+</td-->
+</tr>
+</table>
+	
+</body>
+</html>
+
+endprint;
+
+?>
+

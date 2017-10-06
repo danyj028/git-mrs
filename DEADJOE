@@ -1,0 +1,196 @@
+
+*** These modified files were found in JOE when it aborted on Sat Sep 30 13:07:12 2017
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+sudo
+linenums
+ please
+Please
+click
+
+*** File '(Unnamed)'
+mz_register.php
+mz_register.php
+mz_register.php
+mz_register.php
+mz_register.php
+mz_register.php
+mz_register.php
+mz_register.php
+mz_dir_search
+mz_dir_search.php
+mz_dir_search.php
+mz_dir_search.php
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Sat Sep 30 13:07:12 2017
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+sudo
+linenums
+
+*** File '(Unnamed)'
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mzd.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+mz_register_cont.php
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Sun Oct  1 10:00:38 2017
+*** JOE was aborted because the terminal closed
+
+*** File 'mz_logout_page.html'
+ <head>
+    <META HTTP-EQUIV="Refresh" CONTENT="30;URL=/mrs/mz_login.php?login_scn=1">
+    <title>MZone : Membership Management</title>
+	<link rel=stylesheet href="elt_css/elt_01.css" type="text/css">
+</head>
+<!--el01-00.jpg -->
+<body>
+
+  <div align="center">
+  <img src="/mrs/elt_img/mzone_01.png"  width="200" alt="OSIA : AOSD.">
+ <br>
+  <p>
+  <br>
+  <br><br>
+   <span style="background-color: #D7E3F4; color: #000055; font: bold;
+                             font-size: 20; line-height: 1;
+                             font-family: arial, helvetica, sans-serif;
+                             padding-left: 15; padding-right: 15;
+                            padding-bottom: 10; padding-top: 10; ">
+         Thank You and Good Bye!
+  </span>
+  <p>
+  </div>
+  <br>
+  <p>
+  <p>
+  <p>
+ <div align="center"><font size="+1" >
+<!--a href="/mzone/mz_login.php?login_scn=1" name="Login" ><img src="elt_img/elt_login_1.png" alt="Login" border="0"></a-->
+<input type="button" name="login" value="Login" style="background-color:#cacaca;color:#008800;padding:3px;"
+onclick="location.href='/mrs/mz_login.php?login_scn=1'"/>
+<div align="center">
+  <font size="-1" color=#000080>(Please click Login to return to AOSD Login)</font>
+  </div>
+  <hr width="30%" align="center" size="5">
+ <div align="center"><font size="+1" >
+ </font>
+ </div>
+ 
+<body>
+
+*** File '(Unnamed)'
+sudo
+linenums
+ please
+Please
+click
+osia
+osia
+osia
+
+*** File '(Unnamed)'
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_keyword_search.php
+mz_prod_cat_search.php
+mz_prod_cat_search.php
+mz_prod_cat_search.php
+mz_prod_cat_search.php
+mz_logout_page.html
+mz_logout_page.html
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc
+
+*** These modified files were found in JOE when it aborted on Sun Oct  1 10:00:40 2017
+*** JOE was aborted because the terminal closed
+
+*** File '(Unnamed)'
+sudo
+linenums
+ please
+Please
+click
+osia
+osia
+osia
+
+*** File '(Unnamed)'
+build-config.js
+build-config.js
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_blurb_show.php
+mz_prod_search.php
+mz_prod_search.php
+mz_prod_search.php
+mz_prod_search.php
+
+*** File '* Startup Log *'
+Processing '/etc/joe/joerc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/joerc

@@ -1,0 +1,1 @@
+$w_rec  = $w_stm->fetch(PDO::FETCH_ASSOC);

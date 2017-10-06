@@ -1,0 +1,24 @@
+<?php
+require "db_pgsql.inc";
+// following code allows connection to postgresql database
+
+////////   This is the first connection used for user authentication and always connects to elt001 /////////////
+
+class elt_db extends DB_pg_Sql
+{
+    var $classname = "elt_db";
+    var $Host = "localhost";
+    var $Port = 5432;
+    var $Database = "elt001";
+    var $User = "postgres";
+    var $Password = "sqlcgi";
+    #var $User = "elt01-user";
+    #var $Password = "elt01-99";
+	var $type = "postgresql";
+}
+
+$elt_db_pdo = new PDO("pgsql:host=localhost;dbname=elt001;user=postgres;password=sqlcgi");
+
+$w_http_base_dir = $_SERVER["DOCUMENT_ROOT"];
+
+?>

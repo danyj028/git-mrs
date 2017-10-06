@@ -1,0 +1,423 @@
+<?php
+
+
+class mz_header
+{
+	var $h_title;
+    var $h_username;
+	var $h_home;
+	var $h_return;
+	var $h_close;
+	var $h_reload;
+	var $h_msg;
+	var $h_logo;
+	var $h_date_time;
+	var $h_check_save;  // prompt for save?
+	
+	function h_display() //alisasing display function
+	{
+		$this->display();
+	}	
+	
+	function display()
+	{
+	
+	$f_logo = "<td align=\"center\"><img src=\"./elt_img/mzone_01_12.png\" alt=\"MZone: Membership Management\" width=180 align=\"right\"></td>
+		</tr>";
+	$f_home ="<a href=\"/mzone/mz_00.php\"><font size=\"-1\"><img src=\"./elt_img/elt_home_1.png\" alt=\":: Home ::\" border=\"0\"></font></a>";
+	//$f_home="<a href=\"/elt01/mz_00.php\"><font size=\"-1\"><button style=\"background-color:#97cf3b;font-size:8pt;\">:: Home ::</button></a>";
+	$f_return = "";
+	$f_close = "";
+	$f_reload = "";
+	$f_date_time = "";
+	$f_check_save = "0";  // prompt for save?
+	
+	if ($this->h_check_save == "t")
+	{
+		$f_check_save = "1";
+	}
+		
+	if (($this->h_return == "t")||($this->h_return == ""))
+	{
+		$f_return = "<a href=\"javascript:return01($f_check_save)\"><img src=\"/mzone/elt_img/return-bs.jpg\" size=\"10\" alt=\":: Return ::\" border=\"0\"></a>";
+	}
+		
+	if ($this->h_close == "t")
+	{
+		$f_close = "<a href=\"javascript:close01($f_check_save);\"><img src=\"/mzone/elt_img/close-rs.jpg\" size=\"10\" alt=\":: Close ::\" border=\"0\"></a>";
+		$f_return = "";
+	}
+	
+	if ($this->h_reload == "t")
+	{
+		$f_reload = "<span style=\"color:#880000;\">Click to view latest update --&gt;</span><a href=\"javascript:document.location.reload()\"><img src=\"/mzone/elt_img/reload-brs.jpg\" size=\"10\" alt=\"[Reload]\" border=\"0\"></a>";	}	
+	
+	if ($this->h_home == "f")
+	{
+		$f_home = "&nbsp ";
+	}	
+	
+	if ($this->h_logo == "f")
+	{
+		$f_logo = "";
+	}	
+
+	if ($this->h_date_time == "t")
+	{
+		$f_date_time = date("Y-m-d @  H:i:s");
+			
+	}
+
+		
+	print <<< endprint
+	<style>
+	.mz_menu
+	{
+		background-color:#ededed;
+		color: #000055;
+		font-sze:14px;
+		padding:3px;
+		border-style: solid;
+		border-right:solid;border-right-width:2px;
+		border-left:solid;border-left-width:2px;
+		border-color:#000000;
+	}	
+	</style>
+	
+	<script language="javascript">
+	function check_save()
+	{
+		if (confirm("Have you saved the information before exiting?\\n OK to continue or Cancel and Save Data."))
+		{
+			this.close();
+		}
+	}
+	
+	function close01(chksave)
+	{	
+		if (chksave == 1)
+		{
+	     if (confirm("Have you saved the information before exiting?\\n OK to continue or Cancel and Save Data."))
+		   {
+			   this.close();
+		   }
+		}
+		else
+		{
+			this.close();
+		}	
+	} 
+	
+	function return01(chksave)
+	{	
+		if (chksave == 1)
+		{
+	     if (confirm("Have you saved the information before exiting?\\n OK to continue or Cancel and Save Data."))
+		   {
+			   history.back();
+		   }
+		}
+		else
+		{
+			history.back();
+		}	
+	} 
+	
+	function logout()
+	{
+		if (confirm("Please click [OK] to confirm logout from MZone, or [Cancel] to continue working."))
+     {
+        location.href = "/mzone/mz_logout.php";
+     }
+  	}	
+		
+</script>
+		
+		<table width="100%">
+		<tr>
+		<td width=33%>$f_home</font></a></td>
+		<td width=33% align="center"><span style="color: #000080; font-weight: bold;">$this->h_title</span></td>
+		<td width=33%>$f_logo</td>
+		</tr>
+		<tr>
+		<!--td><span style="color: #000080; font-size:10pt;">$this->h_username : $f_date_time</span></td-->
+		<td colspan=2 align=right>
+		<div align="right">
+    		$f_reload &nbsp;&nbsp;$f_return $f_close
+  		</div>
+		</td>
+		</table>
+		<span style=font-size:12pt;>
+		$this->h_msg
+		</span>
+		<hr>
+
+		
+endprint;
+
+	}
+}
+
+class mz_header_2
+{
+	var $h_title;
+    var $h_username;
+	var $h_home;
+	var $h_return;
+	var $h_close;
+	var $h_reload;
+	var $h_msg;
+	var $h_logo;
+	var $h_date_time;
+	var $h_check_save;  // prompt for save?
+	
+	function h_display() //alisasing display function
+	{
+		$this->display();
+	}	
+	
+	function display()
+	{
+	
+	$f_logo = "<td align=\"center\"><img src=\"./elt_img/mzone_01-18.png\" alt=\"MZone : Membership Management\" width=120 border=0 align=\"right\"></td>
+		</tr>";
+	$f_home ="<a href=\"/mzone/mz_00.php\"><font size=\"-1\"><img src=\"./elt_img/elt_home_1.png\" alt=\":: Home ::\" border=\"0\"></font></a>";
+	//$f_home="<a href=\"/elt01/mz_00.php\"><font size=\"-1\"><button style=\"background-color:#97cf3b;font-size:8pt;\">:: Home ::</button></a>";
+	$f_return = "";
+	$f_close = "";
+	$f_reload = "";
+	$f_date_time = "";
+	$f_check_save = "0";  // prompt for save?
+	
+	if ($this->h_check_save == "t")
+	{
+		$f_check_save = "1";
+	}
+		
+	if (($this->h_return == "t")||($this->h_return == ""))
+	{
+		$f_return = "<a href=\"javascript:return01($f_check_save)\"><img src=\"/mzone/elt_img/return-bs.jpg\" size=\"10\" alt=\":: Return ::\" border=\"0\"></a>";
+	}
+		
+	if ($this->h_close == "t")
+	{
+		$f_close = "<a href=\"javascript:close01($f_check_save);\"><img src=\"/mzone/elt_img/close-rs.jpg\" size=\"10\" alt=\":: Close ::\" border=\"0\"></a>";
+		$f_return = "";
+	}
+	
+	if ($this->h_reload == "t")
+	{
+		$f_reload = "<span style=\"color:#880000;\">Click to view latest update --&gt;</span><a href=\"javascript:document.location.reload()\"><img src=\"/mzone/elt_img/reload-brs.jpg\" size=\"10\" alt=\"[Reload]\" border=\"0\"></a>";	}	
+	
+	if ($this->h_home == "f")
+	{
+		$f_home = "";
+	}	
+	
+	if ($this->h_logo == "f")
+	{
+		$f_logo = "";
+	}	
+
+	if ($this->h_date_time == "t")
+	{
+		$f_date_time = date("Y-m-d @  H:i:s");
+	}
+
+     
+   print <<< endprint
+   
+   <script language="javascript">
+	function check_save()
+	{
+		if (confirm("Have you saved the information before exiting?\\n OK to continue or Cancel and Save Data."))
+		{
+			this.close();
+		}
+	}
+	
+	function close01(chksave)
+	{	
+		if (chksave == 1)
+		{
+	     if (confirm("Have you saved the information before exiting?\\n OK to continue or Cancel and Save Data."))
+		   {
+			   this.close();
+		   }
+		}
+		else
+		{
+			this.close();
+		}	
+	} 
+	
+	function return01(chksave)
+	{	
+		if (chksave == 1)
+		{
+	     if (confirm("Have you saved the information before exiting?\\n OK to continue or Cancel and Save Data."))
+		   {
+			   history.back();
+		   }
+		}
+		else
+		{
+			history.back();
+		}	
+	} 
+	
+	function logout()
+	{
+		if (confirm("Please click [OK] to confirm logout from MZone, or [Cancel] to continue working."))
+     {
+        location.href = "/mzone/mz_logout.php";
+     }
+  	}	
+  	
+  			
+</script>
+		
+		<table width="100%">
+		<tr>
+		<td colspan="2" align="left" style="background: #D7E3F4;padding-left:10px;border-bottom:solid;"><span style="color: #000080; font-weight: bold;">$this->h_title</span></td>
+		<td>$f_logo</td>
+		</tr>
+   
+   
+endprint;   
+
+} 
+
+/*
+ 
+ $b1="<input class=\"mz_b_menu\" type=\"button\" value=\"Manage Membership\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_manage_member()\"></input>";
+ $b2="<input class=\"mz_b_menu\" type=\"button\" value=\"Membership Reports\" style=\"color:#0000aa;padding:1px;\" onclick=\"confirm_logout()\"></input>";
+ $b3="<input class=\"mz_b_menu\" type=\"button\" value=\"System Admin\" style=\"color:#0000aa;padding:1px;\" onclick=\"confirm_logout()\"></input>";
+ $b4="<input class=\"mz_b_menu\" type=\"button\" value=\"Logout\" style=\"color:#aa0000;padding:1px;\" onclick=\"confirm_logout()\"></input>";
+ 
+ $mz_menu_sys = $b1.$b2.$b3.$b4;
+ 
+ 
+ $b11="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Add New Member\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_add_member()\"></input>";
+ $b12="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Edit Member\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_edit_member()\"></input>";
+ $b13="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Delete Member\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_delete_member()\"></input>";
+ 
+ $mz_menu_sys_b1 = $b11.$b12.$b13;
+ 
+ 
+ 
+ $mz_menu_01 = $mz_menu_sys;
+ 
+ //echo $mz_menu_01;
+ 
+		
+	print <<< endprint
+	
+	<style>
+	.mz_menu
+	{
+		background-color:#dddddd;
+		color: #000055;
+		font-size:14px;
+		padding:3px;
+		text-decoration:underline;		
+		
+	}	
+	
+	.mz_menu:hover, .mz_menu:active
+	{
+	    	background:#ffffff;
+	    	text-decoration:underline;
+    }	
+    
+    .mz_b_menu
+	{
+		background-color:#dddddd;
+		color: #000055;
+		font-size:1em;
+		#text-decoration:underline;		
+		width:150px;
+		border-top:0px;
+		border-left:0px;
+		#border-bottom:10px;
+		#border-right:2px;
+		
+	}	
+	
+	.mz_b_menu:hover, .mz_b_s_menu:active
+	{
+	    	background-color:#ffffff;
+	    	#text-decoration:underline;
+ 	
+    }
+    
+    .mz_b_s_menu
+	{
+		background-color:#dddddd;
+		color: #000055;
+		font-size:1em;
+		border-top:0px;
+		border-left:0px;
+		#border-bottom:10px;
+		#border-right:2px;
+		#text-decoration:underline;		
+		width:150px;
+		
+	}	
+	
+	.mz_b_s_menu:hover, .mz_b_s_menu:active
+	{
+	    	background-color:#ffffff;
+	    	#text-decoration:underline;
+    }
+	</style>
+	
+	<script>
+	function mz_manage_member()
+  	{
+		var m1 = document.getElementById("mz_sys_menu_b1");
+
+		m1.style.display ="inherit";
+		
+			
+	}	
+	
+	function mz_add_member()
+	{
+		//alert("In Add");
+		document.getElementById("mz_sys_menu_b1").style.display ="none";
+		location.href="mz_register.php";
+	}
+	</script>
+	
+		<table>
+		<tr>
+		<td>
+		<div>
+		<div style="position:absolute;top:65px;z-index:0;">$mz_menu_sys</div>
+		<div id="mz_sys_menu_b1" 
+		class="mz_b_s_menu"
+		style="position:relative;top:+25px;
+		z-index:1;width:150px;display:none;">$mz_menu_sys_b1</div>
+		</div>
+		
+		</td>
+		<!--td><span style="color: #000080; font-size:10pt;">$this->h_username : $f_date_time</span></td-->
+		<td colspan=1 align=left>
+		<div align="right">
+    		$f_reload &nbsp;&nbsp;$f_return $f_close
+  		</div>
+		</td>
+		</table>
+		<span style=font-size:12pt;>
+		$this->h_msg
+		</span>
+		<hr>
+		
+		
+endprint;
+
+*/
+	
+
+?>

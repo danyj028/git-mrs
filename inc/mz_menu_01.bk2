@@ -1,0 +1,493 @@
+<?php
+
+///require "./inc/mz_menu_options.php";
+
+class mz_menu_01
+{
+	var $mz_menu_title_array;
+    var $h_username;
+	var $h_home;
+	var $h_return;
+	var $h_close;
+	var $h_reload;
+	var $h_msg;
+	var $h_logo;
+	var $h_date_time;
+	var $h_check_save;  // prompt for save?
+	
+	function menu_display() //alisasing display function
+	{
+		$this->display();
+	}	
+	
+	function display()
+	{
+	
+ $b1="<input class=\"mz_b_menu\" id=\"b1\" type=\"button\" value=\"Manage Membership\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(1)\"></input>";
+ $b2="<input class=\"mz_b_menu\" id=\"b2\" type=\"button\" value=\"Membership Reports\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(2)\"></input>";
+ $b3="<input class=\"mz_b_menu\" id=\"b3\" type=\"button\" value=\"System Admin\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(3)\"></input>";
+ $b4="<input class=\"mz_b_menu\" id=\"b4\" type=\"button\" value=\"Logout\" style=\"color:#aa0000;padding:1px;\" onclick=\"w_logout()\"></input>";
+ 
+ $mz_menu_sys = $b1.$b2.$b3.$b4;
+ 
+ 
+ $b11="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Add New Member\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(11)\"></input>";
+ $b12="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Edit Member\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(12)\"></input>";
+ $b13="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Delete Member\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(13)\"></input>";
+ //$b14="<input class=\"mz_b_s_menu\" type=\"button\" value=\"List Members\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(14)\"></input>";
+ $b14="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Process Members\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(15)\"></input>";
+ 
+ $mz_menu_sys_b1 = $b11.$b12.$b13.$b14;
+ 
+ $b21="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Active Members\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(21)\"></input>";
+ $b22="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Expired Members\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(22)\"></input>";
+ $b23="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Suspended Members\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(23)\"></input>";
+ $b24="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Members by Category\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(24)\"></input>";
+ $b25="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Members by Age\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(25)\"></input>";
+ $b26="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Members by Region\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(26)\"></input>";
+ 
+ $mz_menu_sys_b2 = $b21.$b22.$b23.$b24.$b25.$b26;
+ 
+ $b31="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Users\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(31)\"></input>";
+ $b32="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Organisation\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(32)\"></input>";
+ $b33="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Data\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(33)\"></input>";
+ $b34="<input class=\"mz_b_s_menu\" type=\"button\" value=\"System Reports\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(34)\"></input>";
+ //$b35="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Members by Age\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(35\"></input>";
+ //$b36="<input class=\"mz_b_s_menu\" type=\"button\" value=\"Members by Region\" style=\"color:#0000aa;padding:1px;\" onclick=\"mz_do_menu(36)\"></input>";
+ 
+ $mz_menu_sys_b3 = $b31.$b32.$b33.$b34; //.$b35.$b36;
+ 
+ 
+ 
+ //$mz_menu_01 = $mz_menu_sys;
+ 
+ //echo $mz_menu_01;
+ 
+$w_ref_tag = "";
+		
+	print <<< endprint
+	
+	<style>
+	.mz_menu
+	{
+		background-color:#dddddd;
+		color: #000055;
+		font-size:2em;
+		padding:1px;
+		text-decoration:underline;		
+		
+	}	
+	
+	.mz_menu:hover, .mz_menu:active
+	{
+	    	background:#ffffff;
+	    	text-decoration:underline;
+    }	
+    
+    .mz_b_menu
+	{
+		background-color:#dddddd;
+		color: #000055;
+		font-size:1em;
+		#text-decoration:underline;		
+		width:150px;
+		height:40px;
+		#border-top:0px;
+		#border-left:0px;
+		#border-bottom:2px;
+		#border-right:2px;
+		
+	}	
+	
+	.mz_b_menu_sm
+	{
+		background-color:#dddddd;
+		color: #000055;
+		font-size:1em;
+		width:100px;
+		height:30px;
+			
+	}	
+	
+	.mz_b_menu:hover, .mz_b_s_menu:active
+	{
+	    	background-color:#ffffff;
+	    	text-decoration:underline;
+	    		
+    }
+    
+    .mz_b_s_menu
+	{
+		background-color:#dddddd;
+		color: #000055;
+		font-size:1em;
+		#text-decoration:underline;
+		width:150px;
+		height:40px;
+		#border-top:1px;
+		#border-left:0px;
+		#border-bottom:10px;
+		#border-right:2px;
+				
+	}	
+	
+	.mz_b_s_menu:hover, .mz_b_s_menu:active
+	{
+	    	background-color:#ffffff;
+	    	text-decoration:underline;
+    }
+	</style>
+	
+	<script>
+	function w_logout()
+	{
+		var m1 = document.getElementById("mz_sys_menu_b1");
+		//m1.style.zIndex=0;
+		m1.style.display ="none";
+		
+		confirm_logout();
+			
+	}
+	
+	function member_reports()
+	{
+		var m1 = document.getElementById("mz_sys_menu_b2");
+		//m1.style.zIndex=2;
+		m1.style.display ="none";
+		
+		//alert("Doing Reports");
+	}
+	
+	function mz_sys_admin()
+	{
+		var m3 = document.getElementById("mz_sys_menu_b3");
+		
+		m3.style.zIndex=2;
+		m3.style.display ="inherit";
+		
+		//alert("Doing Sysadmin");
+	}
+	
+	function mz_manage_member()
+  	{
+		var m1 = document.getElementById("mz_sys_menu_b1");
+
+		m1.style.zIndex=2;
+		m1.style.display ="inherit";
+		
+	}	
+	
+	function mz_member_report()
+  	{
+		var m2 = document.getElementById("mz_sys_menu_b2");
+
+		m2.style.zIndex=2;
+		m2.style.display ="inherit";
+		
+			
+	}	
+	
+	
+	function mz_add_member()
+	{
+		//alert("In Add");
+		document.getElementById("b1").style.backgroundcolor="#ffffff";
+		document.getElementById("mz_sys_menu_b1").style.display ="none";
+		location.href="mz_register.php";
+	}
+	
+	function mz_edit_member()
+	{
+		document.getElementById("b1").style.backgroundcolor="#ffffff";
+		document.getElementById("mz_sys_menu_b1").style.display ="none";
+		
+		document.getElementById("mz_edit_pane").style.visibility="visible";
+		//location.href="mz_register.php";
+	}
+	
+	function cancel_mz_edit()
+	{
+		l1 = document.getElementById("mz_edit_pane");
+		
+		//document.form1.x_orig_page.value = "";
+		//document.form1.x_orig_page_id.value = "";
+		l1.style.visibility="hidden";
+	}
+
+	function mz_do_menu(w_menu_option)
+	{
+		document.getElementById("mz_sys_menu_b1").style.display ="none";
+		document.getElementById("mz_sys_menu_b2").style.display ="none";
+		document.getElementById("mz_sys_menu_b3").style.display ="none";
+		
+		switch(w_menu_option)
+		{
+		case 1:
+			//location.href="mz_register.php";
+			mz_manage_member();
+			break;
+		case 2:
+			//alert("Doig Reports");
+			mz_member_report();
+			break;
+		case 3:
+			//alert("Doing Sys_Admin");
+			mz_sys_admin();
+			break;		
+		case 11:
+			mz_add_member();
+			break;
+		case 12:
+			//alert("Doing Edit");
+			mz_edit_member();
+			break;
+		case 13:
+			alert("Doing Delete");
+			break;
+		case 14:
+			alert("Doing List");
+			break;
+		case 15:
+			alert("Doing Process Membership");
+			break;
+		case 16:
+			alert("Doing Edit");
+			break;
+		case 17:
+			alert("Doing Edit");
+			break;
+		case 21:
+			alert("Doing 21");
+			break;
+		case 22:
+			alert("Doing 22");
+			break;
+		case 23:
+			alert("Doing 23");
+			break;
+		case 24:
+			alert("Doing 24");
+			break;			
+		case 25:
+			alert("Doing 25");
+			break;	
+		case 26:
+			alert("Doing 26");
+			break;	
+		case 31:
+			alert("Doing 31");
+			break;	
+		case 32:
+			alert("Doing 32");
+			break;			
+		case 33:
+			alert("Doing 33");
+			break;	
+		case 34:
+			alert("Doing 34");
+			break;	
+		case 35:
+			alert("Doing 35");
+			break;	
+		default:
+			alert("No Option");
+		}
+			
+	}	
+	
+	</script>
+	
+		<!--table>
+		<tr>
+		<td-->
+		
+		<div style="position:relative;top:-10px;z-index:1;">$mz_menu_sys</div>
+		
+			<div id="mz_sys_menu_b1" 
+		    	style="position:relative;top:-20px;left:10px;width:90%;
+				z-index:0;display:none;">
+			$mz_menu_sys_b1
+			</div>
+			
+			<div id="mz_sys_menu_b2" 
+		    	style="position:relative;top:-20px;left:10px;width:90%;
+				z-index:0;display:none;">
+			$mz_menu_sys_b2
+			</div>
+			
+			<div id="mz_sys_menu_b3" 
+		    	style="position:relative;top:-20px;left:10px;width:90%;
+				z-index:0;display:none;">
+			$mz_menu_sys_b3
+			</div>
+		
+		
+		
+		<!--/td>
+		</tr-->
+		
+		<div id="mz_edit_pane"
+							
+			style="margin-left:10px;
+			margin-right:10px;
+			margin-top:10px;
+			margin-bottom:10px;
+			padding-right:20px;
+			padding-left:20px;
+			padding-top: 10px;
+			padding-bottom:20px;
+			background-color:#D7E3F4;opacity:0.70;
+			position:absolute;
+			bottom:5px;right:5px;left:5px;
+			border:solid;visibility:hidden;">
+			
+			<div style="text-align:right;">
+<input type="button" style="height:30px; width:30px;background-color:#ffffff;font-size:16px;text-align:center; solid;font-weight:bold;color:#880000;" name="Cancel" value="X" onclick="cancel_mz_edit()">
+</div>
+
+<!--
+
+	<FORM name="form1" action="mz_register_cont.php" method="post" enctype="application/x-www-form-urlencoded">
+	$w_ref_tag
+    <table width="98%" align="center" bgcolor="#D7E3F4" cellpadding="3" style="font-size: 12px;margin-top:-1em;">
+   <tbody>
+	<tr><TD colspan=4>
+		<div style="background-color: #2E2ECA;  color : #ffffff; font-size : 12px; padding:2px; text-align:center;">Edit Membership: Please edit information below then [save] or select [delete] to delete the  record.</div>
+	<hr></TD></tr>
+  	<tr>
+      <td  valign="center" width="15%">Organisation name:</td>
+		<td width="30%"><INPUT type="text" name="x_orgname" size="40" maxlength="40">
+		<br><span style="font-size:10px; color:#880000">If you are registering as an individual please leave this field blank.</span>
+		</td>
+		<td>
+		<!--Other name: <span style="padding-left:30px;">
+		</td>
+		<td>
+		<INPUT type="text" name="x_oname" size="25" maxlength="25"></span>
+		</td-->
+		<td></td>
+    </tr>
+    <tr>
+      <td>First name:</td>
+      <td><INPUT type="text" name="x_fname" size="25" maxlength="25"></td>
+		<td >Surname:</td>
+		
+		<td><INPUT type="text" name="x_surname" size="25" maxlength="25"></td>
+		<!--td>
+		<input type="text" name="x_dob_d" size="3"maxlength="2">/
+		<input type="text" name="x_dob_m" size="3"maxlength="2">/
+		<input type="text" name="x_dob_y" size="5"maxlength="4">
+		<input type="hidden" name="x_dob">
+		
+		<span style="border:solid;border-width:1px; padding-top:5px;padding-left:5px;padding-right;5px;padding-bottom:5px;">
+		F:<input type="radio" name="gender" value="f" style="position:relative;top:+2px;">
+		| M:<input type="radio" name="gender" value="m" style=position:relative;top:+2px;">
+		</span>
+		</td-->
+    </tr>
+	<tr>
+    <td>Email Address:</td>
+		<td><INPUT type="text" name="x_email_add" size="30" maxlength="60" onchange=set_login_name()>
+		<br><span style="font-size:10px; color:#880000">Please ensure that the email address is valid.</span></td>
+	</tr>
+    </tr>
+    <tr><td>Phone Number:</td>
+      <td valign="top"><INPUT type="text" name="x_phone" size="15" maxlength="15">
+		</td>
+	  <td>Mobile Phone Number:</td>
+      <td valign="top"><INPUT type="text" name="x_mphone" size="15" maxlength="15">
+		</td>
+    </tr>
+	
+		<tr>
+		<TD width=15%>
+		Address Line 1:
+		</TD>
+		<TD width=* colspan=3>
+		<INPUT type="text" name="x_addr_1" size="20" maxlength="20"> (House, Building, Flat or Unit num / Block num and Street name if applicable)
+		</TD>
+		</tr>
+		<tr></tr>
+		<TD width=15%>
+		Address Line 2:
+		</TD>
+		<TD width=25%>
+		<INPUT type="text" name="x_addr_2" size="20" maxlength="20">
+		</TD>
+		</TR>
+		<tr>
+		<TD width=15%>
+		City:
+		</TD>
+		<TD width=35%>
+		<INPUT type="text" name="x_suburb" size="20" maxlength="20">
+		</TD>
+		<TD width=15%>
+		Postcode:
+		</TD>
+		<TD width=35%>
+		<INPUT type="text" name="x_pcode" size="8" maxlength="8">
+		</TD>
+		</TR>
+		<tr>
+		<TD width=15%>
+		State/Province:
+		</TD>
+		<TD width=35%>
+		<INPUT type="text" name="x_state" size="20" maxlength="20">
+		</TD>
+		<TD width=15%>
+		Country:
+		</TD>
+		<TD width=35%>
+		<INPUT type="text" name="x_country" size="20" maxlength="20">
+		</TD>
+		</TR>
+		<tr>
+	<td width=15%>Alternative Contact Name:</td>
+	<td width=35%><INPUT type="text" name="x_second_name" size="20" maxlength="20"</td>
+	
+	
+	<td width=15%>Alternative Contact Phone:</td>
+	<td width=35%><INPUT type="text" name="x_second_phone" size="15" maxlength="15"</td>
+	</tr>
+	<!--/table-->
+	</td>
+	</tr>
+	
+	<tr>
+	
+	</tr>
+	
+	<tr>
+	<td colspan=4><hr></td>
+	</tr>
+	<TD colspan=4 align="center">
+		<INPUT class="mz_b_menu_sm" type="button" value="Save" name="Save" onclick="javascript:mz_save_record()">
+		&nbsp;&nbsp;&nbsp;
+		<INPUT class="mz_b_menu_sm" type="button" value="Delete" name="delete" onclick="javascript:mz_delete_record()">
+		&nbsp;&nbsp;&nbsp;
+		<INPUT class="mz_b_menu_sm" type="button" value="Cancel" name="cancel" onclick="javascript:mz_cancel()">
+	</td>
+	</tr>
+	<tr><TD colspan=4>
+		<div style="background-color : #2E2ECA; color : #ffffff; font-size : 10px; padding:2px; text-align:center;"> The information you provide here will never be disclosed to any other individual or organisation, unless required by a court of law. </div>
+	</TD></tr>
+  </tbody>
+</table>
+</form>
+
+	-->		
+	
+		</div>
+		
+		
+		
+endprint;
+
+
+	
+
+
+	}
+}

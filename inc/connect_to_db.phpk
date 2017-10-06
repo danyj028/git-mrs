@@ -1,0 +1,46 @@
+<?php
+
+require "db_pgsql.inc";
+
+if (!isset($_GET["login_scn"])) // coming from login screen - hence user is "login"
+{
+if (!isset($_connect_to_db))
+{
+	$_connect_to_db = 1;
+
+// following code allows connection to postgresql database
+$w_http_base_dir = $_SERVER["DOCUMENT_ROOT"];
+
+if (isset($_COOKIE["ELT_dbxxx"])&&isset($_COOKIE["ELTauth"]))
+{
+	$w_dbxxx = $_COOKIE["ELT_dbxxx"];
+}
+else
+{
+	die("Error using eLiveTrain.<br>Probable cause: User is not logged in or Invalid User Session. <br>Solution: Close the browser and start again.[err:cdb001]");
+}
+
+//$w_dbxxx = "exl001";
+
+class elt_db extends DB_pg_Sql
+{
+       var $classname = "elt_db";
+        var $Host = "localhost";
+        var $Port = 5432;
+	    var $Database = "elt001";
+        var $User = "postgres";
+		//var $Password = "exl001";
+
+				function elt_db()
+				{
+					 global $w_dbxxx;
+
+				   $this->Database = $w_dbxxx;
+				}
+}
+}
+}
+
+$elt_db_pdo = new PDO("pgsql:host=localhost;dbname=elt001;user=postgres;password=sqlcgi");
+
+?>
