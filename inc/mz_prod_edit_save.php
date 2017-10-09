@@ -123,5 +123,16 @@ for ($k4==0;$k4<$w_nkw;$k4++)
 }	
 $mz_db->commit();
 
-echo "Data saved";
+
+print <<< endprint
+
+Data Saved.
+<script type/text="javascript">
+alert("Data saved. Continue.");
+window.history.back();
+</script>
+
+endprint;
+
+
 ?>

@@ -55,5 +55,17 @@ $w_stm->execute();
 
 //$mz_db->commit();
 
-echo "Data saved";
+
+print <<< endprint
+
+<script type/text="javascript">
+alert("Data saved. Continue");
+window.history.back();
+</script>
+
+endprint;
+
+
+
+//echo "Data saved";
 ?>

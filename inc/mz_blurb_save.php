@@ -32,5 +32,16 @@ $w_stm2 = $mz_db->prepare($w_query2);
 $w_stm2->execute();
 $mz_db->commit();
 
-echo "Data saved.  Profile blurb indexed.";
+print <<< endprint
+
+Profile saved and indexed.
+
+<script type/text="javascript">
+alert("Profile saved  and indexd. Continue.");
+window.history.back();
+</script>
+
+endprint;
+
+
 ?>

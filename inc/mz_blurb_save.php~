@@ -28,8 +28,8 @@ $w_query2= "update mz_user_profile set profile_vector=to_tsvector(profile) where
 $mz_db->beginTransaction();
 $w_stm = $mz_db->prepare($w_query);
 $w_stm->execute();
-$w_stm = $mz_db->prepare($w_query2);
-$w_stm->execute();
+$w_stm2 = $mz_db->prepare($w_query2);
+$w_stm2->execute();
 $mz_db->commit();
 
 echo "Data saved.  Profile blurb indexed.";

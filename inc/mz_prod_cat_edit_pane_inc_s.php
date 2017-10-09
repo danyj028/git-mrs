@@ -266,13 +266,8 @@ print <<< endprint
 	<TD colspan=4 align="center">
 		<INPUT class="mz_b_menu_sm_l" type="button" value="Save Selection" name="Save" onclick="javascript:mz_pc_save_record()">
 		&nbsp;&nbsp;&nbsp;
-		<INPUT class="mz_b_menu_sm_l" type="button" value="Cancel Selection" name="delete" onclick="javascript:mz_change_member_status(2)">	
-		&nbsp;&nbsp;&nbsp;
-		<!--INPUT class="mz_b_menu_sm_l" type="button" value="Re-activate Membership" name="reinstate" onclick="javascript:mz_change_member_status(1)">
-		&nbsp;&nbsp;&nbsp;
-		<INPUT class="mz_b_menu_sm_l" type="button" value="Renew Membership" name="renew" onclick="javascript:mz_renew_member()">
-		&nbsp;&nbsp;&nbsp; >
-		<INPUT class="mz_b_menu_sm_l" type="button" value="Cancel Changes" name="cancel" onclick="javascript:mz_change_member_status(3)"-->
+		<INPUT class="mz_b_menu_sm_l" type="button" value="Cancel" name="delete" onclick="javascript:mz_change_member_status(2)">	
+	&nbsp;&nbsp;&nbsp;
 	</td>
 	</tr>
 	<tr><TD colspan=4>

@@ -1,8 +1,8 @@
 var mz_data = new ajax_request();
 
-var mem_status = ["Unknown!","ACTIVE","SUSPENDED", "CANCELLED","PENDING","EXPIRED","MARKED FOR DELETION"];
+var mem_status = ["PENDING","ACTIVE","SUSPENDED", "CANCELLED","PENDING","EXPIRED","MARKED FOR DELETION"];
 
-var status_color =["#d4d4d4","#00d400","#d40000","#a4a4a4","#7BC4FA","#fbab33","#616161"];
+var status_color =["#7BCAFA","#00d400","#d40000","#a4a4a4","#7BC4FA","#fbab33","#616161"];
 var status_font_size=["1em", "1.2em","1.5em","1.2em","1.2em","1.5em","1.2em"];
 
 function ajax_request()

@@ -31,7 +31,7 @@ if ($w_status=="ACTIVE")
 	
 
 //echo "dada";
-echo "User_id: ".$w_user_id."  ->";
+echo "User_id: ".$w_user_id." : ";
 
 $w_query = "update mzuser set surname='$w_surname',
 			fname='$w_fname',
@@ -50,7 +50,7 @@ $w_query = "update mzuser set surname='$w_surname',
 			orgname='$w_orgname',
 			category='$w_cat' where id = '$w_user_id'";
 		   
-echo $w_query;		   
+//echo $w_query;		   
 		   
 $w_stm = $mz_db->prepare($w_query);
 $w_stm->execute();
@@ -59,7 +59,7 @@ $w_stm->execute();
 
 //$w_rec_no = $w_stm->rowCount();
 
-echo "Record Updated";
+echo "Record Updated.";
 
 			
 			

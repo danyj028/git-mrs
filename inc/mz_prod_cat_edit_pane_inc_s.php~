@@ -166,10 +166,11 @@ background-color:#fafafa;opacity:0.97;visibility:hidden;">
     <hr>
     </td>
     </tr>
-    <td>
+    <tr>
+    <!--td>
 		<INPUT class="mz_b_menu_xsm_l" type="button" value="More options..." name="select_list" onclick="javascript:mz_select_list('l')">
 		&nbsp;&nbsp;&nbsp;
-	</td>
+	</td-->
 	<tr>
 	</tr>
 endprint;
